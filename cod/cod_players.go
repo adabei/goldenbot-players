@@ -40,7 +40,7 @@ func (p *Players) Start() {
 		switch ev := ev.(type) {
 		case cod.Join:
 			if !exists(p.db, ev.GUID) {
-				log.Println("inserting ", ev.GUID, "into players")
+				log.Println("players: inserting ", ev.GUID, "into database")
 				_, err := p.db.Exec("insert into players(id) values(?);", ev.GUID)
 				if err != nil {
 					log.Fatal(err)
@@ -54,7 +54,6 @@ func exists(db *sql.DB, id string) bool {
 	var guid string
 	err := db.QueryRow("select id from players where id = ?", id).Scan(&guid)
 	if err != nil {
-		log.Println(err)
 		return false
 	}
 
