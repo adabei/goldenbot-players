@@ -34,9 +34,6 @@ func (p *Players) Setup() error {
 }
 
 func (p *Players) Start() {
-	p.db.Exec("insert into players(id) values('kaiser');")
-	log.Println("yes inserting")
-
 	for {
 		ev := <-p.events
 
