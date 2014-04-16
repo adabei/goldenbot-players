@@ -3,9 +3,9 @@ package players
 
 import (
 	"database/sql"
-	"github.com/adabei/goldenbot/events"
-	"github.com/adabei/goldenbot/events/cod"
-	"github.com/adabei/goldenbot/rcon"
+	"github.com/schwarz/goldenbot/events"
+	"github.com/schwarz/goldenbot/events/cod"
+	"github.com/schwarz/goldenbot/rcon"
 	"log"
 )
 
